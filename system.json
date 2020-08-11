@@ -1,7 +1,7 @@
 {
   "name": "adnd1",
   "title": "Advanced Dungeons &amp; Dragons 1e",
-  "description": "The Advanced Dungeons &amp; Dragons 1e system for FoundryVTT!",
+  "description": "The Advanced Dungeons & Dragons 1e system for FoundryVTT!",
   "version": "1.0.0",
   "minimumCoreVersion": "0.6.5",
   "compatibleCoreVersion": "0.6.5",
