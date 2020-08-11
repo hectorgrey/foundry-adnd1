@@ -1,6 +1,6 @@
 {
     "Actor": {
-	"types": ["character"],
+	"types": ["character", "monster"],
 	"templates": {
 	    "base": {
 		"hit_points": {
@@ -43,6 +43,11 @@
 		"cha": {
 		    "value": 10
 		}
+	    }
+	},
+	"monster": {
+	    "hit_dice": {
+		"value": 1
 	    }
 	}
     },
