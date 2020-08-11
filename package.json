@@ -1,0 +1,23 @@
+{
+  "name": "adnd1",
+  "version": "1.0.0",
+  "description": "CSS compiler for the Advanced Dungeons &amp; Dragons 1e system",
+  "scripts": {
+    "build": "gulp",
+    "compile": "gulp css",
+    "watch": "gulp",
+    "gulp": "gulp"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "hectorgrey",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
