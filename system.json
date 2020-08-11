@@ -21,7 +21,7 @@
   "gridDistance": 10,
   "gridUnits": "ft",
   "primaryTokenAttribute": "Hit Points",
-  "url": "",
+  "url": "https://github.com/hectorgrey/foundry-adnd1",
   "manifest": "",
   "download": "https://github.com/hectorgrey/foundry-adnd1",
   "license": "LICENSE.txt"
