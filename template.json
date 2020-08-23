@@ -22,11 +22,18 @@
 	    "attributes": {
 		"level": {
 		    "value": 1
+		},
+		"experience": {
+		    "value": 0
+		},
+		"warriorhp": {
+		    "value": false
 		}
 	    },
 	    "abilities": {
 		"str": {
-		    "value": 10
+		    "value": 10,
+		    "percent": 0
 		},
 		"dex": {
 		    "value": 10

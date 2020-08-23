@@ -136,8 +136,12 @@ export class ADNDActor extends Actor {
 
 	// Make separate methods for each Actor type (character, npc,
 	// etc.) to keep things organized.
-	if (actorData.type === 'character')
+	if (actorData.type === 'character') {
 	    this._prepareCharacterData(actorData);
+	}
+	else if (actorData.type === 'monster') {
+	    this._prepareMonsterData(actorData);
+	}
     }
 
     /**
@@ -153,7 +157,100 @@ export class ADNDActor extends Actor {
 	// switch statement, which would be the quick and dirty
 	// option.
 
+	const strVal = data.abilities.str.value;
+	const strPC = data.abilities.str.percent;
 
+	data.abilities.str.toHit = strTable[strVal].toHit;
+	data.abilities.str.damage = strTable[strVal].damage;
+	data.abilities.str.weight = strTable[strVal].weight;
+	data.abilities.str.openDoor = strTable[strVal].openDoor;
+	data.abilities.str.forceLock = strTable[strVal].forceLock;
+	data.abilities.str.bendBars = strTable[strVal].bendBars;
+
+	// This set of values shouldn't be required as often, and is
+	// harder to add to a lookup table.
+
+	if (strVal === 18 && strPC > 0) {
+	    if (strPC === 100) {
+		data.abilities.str.toHit += 2;
+		data.abilities.str.damage += 4;
+		data.abilities.str.weight += 2250;
+		data.abilities.str.openDoor += 2;
+		data.abilities.str.forceLock += 2;
+		data.abilities.str.bendBars += 24;
+	    }
+	    else if (strPC > 90) {
+		data.abilities.str.toHit += 1;
+		data.abilities.str.damage += 3;
+		data.abilities.str.weight += 1250;
+		data.abilities.str.openDoor += 1;
+		data.abilities.str.forceLock += 1;
+		data.abilities.str.bendBars += 19;
+	    }
+	    else if (strPC > 75) {
+		data.abilities.str.toHit += 1;
+		data.abilities.str.damage += 2;
+		data.abilities.str.weight += 750;
+		data.abilities.str.openDoor += 1;
+		data.abilities.str.bendBars += 14;
+	    }
+	    else if (strPC > 50) {
+		data.abilities.str.toHit += 1;
+		data.abilities.str.damage += 1;
+		data.abilities.str.weight += 500;
+		data.abilities.str.openDoor += 1;
+		data.abilities.str.bendBars += 9;
+	    }
+	    else {
+		data.abilities.str.damage += 1;
+		data.abilities.str.weight += 250;
+		data.abilities.str.bendBars += 4;
+	    }
+	}
+
+	const intVal = data.abilities.int.value;
+
+	data.abilities.int.langs = intTable[intVal].langs;
+	data.abilities.int.maxLevel = intTable[intVal].maxLevel;
+	data.abilities.int.spellChance = intTable[intVal].spellChance;
+	data.abilities.int.minSpells = intTable[intVal].minSpells;
+	data.abilities.int.maxSpells = intTable[intVal].maxSpells;
+
+	const wisVal = data.abilities.wis.value;
+
+	data.abilities.wis.magicSave = wisTable[wisVal].magicSave;
+	data.abilities.wis.maxLevel = wisTable[wisVal].maxLevel;
+	data.abilities.wis.bonusSpells1 = wisTable[wisVal].bonusSpells[1];
+	data.abilities.wis.bonusSpells2 = wisTable[wisVal].bonusSpells[2];
+	data.abilities.wis.bonusSpells3 = wisTable[wisVal].bonusSpells[3];
+	data.abilities.wis.bonusSpells4 = wisTable[wisVal].bonusSpells[4];
+	data.abilities.wis.failure = wisTable[wisVal].failure;
+	
+	const dexVal = data.abilities.dex.value;
+
+	data.abilities.dex.reaction = dexTable[dexVal].reaction;
+	data.abilities.dex.defence = dexTable[dexVal].defence;
+
+	const conVal = data.abilities.con.value;
+
+	data.abilities.con.hp = conTable[conVal].hp;
+	data.abilities.con.systemShock = conTable[conVal].systemShock;
+	data.abilities.con.resurrection = conTable[conVal].resurrection;
+
+	// Only warriors get bonus hp from con greater than +2
+	if (data.abilities.con.hp > 2 && data.attributes.warriorhp.value === false) {
+	    data.abilities.con.hp = 2;
+	}
+
+	const chaVal = data.abilities.cha.value;
+
+	data.abilities.cha.henchmen = chaTable[chaVal].henchmen;
+	data.abilities.cha.loyalty = chaTable[chaVal].loyalty;
+	data.abilities.cha.reaction = chaTable[chaVal].reaction;
+    }
+
+    _prepareMonsterData(actorData) {
+	const data = actorData.data;
     }
 
 }
