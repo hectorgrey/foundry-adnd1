@@ -1,74 +1,74 @@
 {
     "Actor": {
-	"types": ["character", "monster"],
-	"templates": {
-	    "base": {
-		"hit_points": {
-		    "value": 10,
-		    "min": -10,
-		    "max": 10
-		},
-		"thac0": {
-		    "value": 20
-		},
-		"ac": {
-		    "value": 10
-		}
-	    }
-	},
-	"character": {
-	    "templates": ["base"],
-	    "biography": "",
-	    "attributes": {
-		"level": {
-		    "value": 1
-		},
-		"experience": {
-		    "value": 0
-		},
-		"warriorhp": {
-		    "value": false
-		}
-	    },
-	    "abilities": {
-		"str": {
-		    "value": 10,
-		    "percent": 0
-		},
-		"dex": {
-		    "value": 10
-		},
-		"con": {
-		    "value": 10
-		},
-		"int": {
-		    "value": 10
-		},
-		"wis": {
-		    "value": 10
-		},
-		"cha": {
-		    "value": 10
-		}
-	    }
-	},
-	"monster": {
-	    "hit_dice": {
-		"value": 1
-	    }
-	}
+        "types": ["character", "monster"],
+        "templates": {
+            "base": {
+                "hit_points": {
+                    "value": 10,
+                    "min": -10,
+                    "max": 10
+                },
+                "thac0": {
+                    "value": 20
+                },
+                "ac": {
+                    "value": 10
+                }
+            }
+        },
+        "character": {
+            "templates": ["base"],
+            "biography": "",
+            "attributes": {
+                "level": {
+                    "value": 1
+                },
+                "experience": {
+                    "value": 0
+                },
+                "warriorhp": {
+                    "value": false
+                }
+            },
+            "abilities": {
+                "str": {
+                    "value": 10,
+                    "percent": 0
+                },
+                "dex": {
+                    "value": 10
+                },
+                "con": {
+                    "value": 10
+                },
+                "int": {
+                    "value": 10
+                },
+                "wis": {
+                    "value": 10
+                },
+                "cha": {
+                    "value": 10
+                }
+            }
+        },
+        "monster": {
+            "hit_dice": {
+                "value": 1
+            }
+        }
     },
     "Item": {
-	"types": ["item"],
-	"templates": {
-	    "base": {
-		"description": ""
-	    }
-	},
-	"item": {
-	    "templates": ["base"],
-	    "quantity": 1,
-	    "weight": 0
-	}
+        "types": ["item"],
+        "templates": {
+            "base": {
+                "description": ""
+            }
+        },
+        "item": {
+            "templates": ["base"],
+            "quantity": 1,
+            "weight": 0
+        }
     }
 }

@@ -1,28 +1,28 @@
 {
-  "name": "adnd1",
-  "title": "Advanced Dungeons & Dragons 1e",
-  "description": "The Advanced Dungeons & Dragons 1e system for FoundryVTT!",
-  "version": "1.0.0",
-  "minimumCoreVersion": "0.6.5",
-  "compatibleCoreVersion": "0.6.5",
-  "templateVersion": 2,
-  "author": "hectorgrey",
-  "esmodules": ["module/adnd1.js"],
-  "styles": ["css/adnd1.css"],
-  "scripts": [],
-  "packs": [],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
-  "gridDistance": 10,
-  "gridUnits": "ft",
-  "primaryTokenAttribute": "Hit Points",
-  "url": "https://github.com/hectorgrey/foundry-adnd1",
-  "manifest": "",
-  "download": "https://github.com/hectorgrey/foundry-adnd1",
-  "license": "LICENSE.txt"
+    "name": "adnd1",
+    "title": "Advanced Dungeons & Dragons 1e",
+    "description": "The Advanced Dungeons & Dragons 1e system for FoundryVTT!",
+    "version": "0.1.0",
+    "minimumCoreVersion": "0.6.5",
+    "compatibleCoreVersion": "0.6.6",
+    "templateVersion": 2,
+    "author": "hectorgrey",
+    "esmodules": ["module/adnd1.js"],
+    "styles": ["css/adnd1.css"],
+    "scripts": [],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "gridDistance": 10,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "Hit Points",
+    "url": "https://github.com/hectorgrey/foundry-adnd1",
+    "manifest": "",
+    "download": "https://github.com/hectorgrey/foundry-adnd1",
+    "license": "LICENSE.txt"
 }
