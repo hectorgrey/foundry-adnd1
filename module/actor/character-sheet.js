@@ -7,7 +7,7 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["adnd1", "sheet", "actor", "character"],
             template: "systems/adnd1/templates/actor/character-sheet.html",
-            width: 600,
+            width: 1100,
             height: 600,
             tabs: [{
                 navSelector: ".sheet-tabs",
@@ -54,7 +54,10 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
         });
 
         // Rollable abilities.
-        html.find('.rollable').click(this._onRoll.bind(this));
+        html.find('.resurrection').click(this.onResurrectionRoll.bind(this));
+        html.find('.system_shock').click(this.onSystemShockRoll.bind(this));
+        html.find('.spell_failure').click(this.onSpellFailureRoll.bind(this));
+        html.find('.spell_learning').click(this.onSpellLearningRoll.bind(this));
     }
 
     /* -------------------------------------------- */
@@ -65,6 +68,27 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
      * @param {Event} event   The originating click event
      * @private
      */
+
+    onResurrectionRoll(event) {
+        let roll = new Roll("1d100ms<@resurrection", this.actor.getRollData("resurrection"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onSystemShockRoll(event) {
+        let roll = new Roll("1d100ms<@system_shock", this.actor.getRollData("system_shock"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onSpellFailureRoll(event) {
+        let roll = new Roll("1d100ms<@spell_failure", this.actor.getRollData("spell_failure"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onSpellLearningRoll(event) {
+        let roll = new Roll("1d100ms<@spell_learning", this.actor.getRollData("spell_learning"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+    
     _onItemCreate(event) {
         event.preventDefault();
         const header = event.currentTarget;
@@ -86,25 +110,5 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
 
         // Finally, create the item!
         return this.actor.createOwnedItem(itemData);
-    }
-
-    /**
-     * Handle clickable rolls.
-     * @param {Event} event   The originating click event
-     * @private
-     */
-    _onRoll(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-        const dataset = element.dataset;
-
-        if (dataset.roll) {
-            let roll = new Roll(dataset.roll, this.actor.data.data);
-            let label = dataset.label ? `Rolling ${dataset.label}` : '';
-            roll.roll().toMessage({
-                speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-                flavor: label
-            });
-        }
     }
 }

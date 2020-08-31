@@ -249,6 +249,22 @@ export class ADNDActor extends Actor {
         data.abilities.cha.reaction = chaTable[chaVal].reaction;
     }
 
+    getRollData(rollType) {
+        const data = this.data.data;
+        switch (rollType) {
+            case "resurrection":
+                return {resurrection: data.abilities.con.resurrection};
+            case "system_shock":
+                return {system_shock: data.abilities.con.systemShock};
+            case "spell_failure":
+                return {spell_failure: data.abilities.wis.failure};
+            case "spell_learning":
+                return {spell_learning: data.abilities.int.spellChance};
+            default:
+                break;
+        }
+    }
+
     _prepareMonsterData(actorData) {
         const data = actorData.data;
     }

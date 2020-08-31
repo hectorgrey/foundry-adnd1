@@ -9,15 +9,49 @@
              height="100"
              width="100"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name"
-                                        type="text"
-                                        value="{{actor.name}}"
-                                        placeholder="Name"/></h1>
-
             {{!-- The grid classes are defined in scss/global/_grid.scss. To
             use, use both the "grid" and "grid-Ncol" class where "N" can be
             any number from 1 to 12 and will create that number of columns.
             --}}
+
+            <div class="resources grid grid-4col">
+                <div class="resource flex-group-center">
+                    <label for="actor.name"
+                        class="resource-label">Name</label>
+                    <div class="resource-content flex-row flex-center flex-between">
+                        <input type="text"
+                               name="actor.name"
+                               value="{{actor.name}}" />
+                    </div> 
+                </div>
+                <div class="resource flex-group-center">
+                    <label for="data.race"
+                           class="resource-label">Race</label>
+                    <div class="resource-content flex-rorw flex-center flex-between">
+                        <input type="text"
+                               name="data.race"
+                               value="{{data.race}}" />
+                    </div>
+                </div>
+                <div class="resource flex-group-center">
+                    <label for="data.class"
+                           class="resource-label">Class</label>
+                    <div class="resource-content flex-rorw flex-center flex-between">
+                        <input type="text"
+                               name="data.class"
+                               value="{{data.class}}" />
+                    </div>
+                </div>
+                <div class="resource flex-group-center">
+                    <label for="data.alignment"
+                           class="resource-label">Alignment</label>
+                    <div class="resource-content flex-rorw flex-center flex-between">
+                        <input type="text"
+                               name="data.alignment"
+                               value="{{data.alignment}}" />
+                    </div>
+                </div>
+            </div>
 
             <div class="resources grid grid-3col">
                 {{!-- "flex-group-center" is also defined in the _grid.scss
@@ -189,7 +223,7 @@
                                value="{{data.abilities.int.maxLevel}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox spell_learning rollable">
                         <label for="data.abilities.int.spellChance"
                                class="resource-label">Chance to Learn Spell</label>
                         <input disabled
@@ -236,7 +270,7 @@
                                value="{{data.abilities.wis.bonusSpells1}}{{#if data.abilities.wis.bonusSpells2}}; {{data.abilities.wis.bonusSpells2}}{{#if data.abilities.wis.bonusSpells3}}; {{data.abilities.wis.bonusSpells3}}{{#if data.abilities.wis.bonusSpells4}}; {{data.abilities.wis.bonusSpells4}}{{/if}}{{/if}}{{/if}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox spell_failure rollable">
                         <label for="data.abilities.wis.failure"
                                class="resource-label">Spell Failure</label>
                         <input disabled
@@ -314,13 +348,13 @@
                     </div>
                     <div class="flexbox">
                         <label for="data.attributes.warriorhp.value"
-                               class="resource-label">Warrior HP</label>
+                               class="resource-label">Warrior HP</label><br />
                         <input type="checkbox"
                                name="data.attributes.warriorhp.value"
                                value="{{data.abilities.warriorhp.value}}"
                                data-dtype="boolean"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox system_shock rollable">
                         <label for="data.abilities.con.systemShock"
                                class="resource-label">System Shock</label>
                         <input disabled
@@ -329,7 +363,7 @@
                                value="{{data.abilities.con.systemShock}}%"
                                data-dtype="number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox resurrection rollable">
                         <label for="data.abilities.con.resurrection"
                                class="resource-label">Resurrection</label>
                         <input disabled
