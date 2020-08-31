@@ -1,6 +1,7 @@
 // Import Modules
 import { ADNDActor } from "./actor/actor.js";
-import { ADNDActorSheet } from "./actor/actor-sheet.js";
+import { ADNDMonsterSheet } from "./actor/monster-sheet.js";
+import { ADNDCharacterSheet } from "./actor/character-sheet.js";
 import { ADNDItem } from "./item/item.js";
 import { ADNDItemSheet } from "./item/item-sheet.js";
 
@@ -16,8 +17,8 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1d20",
-    decimals: 2
+    formula: "1d6",
+    decimals: 0
   };
 
   // Define custom Entity classes
@@ -26,7 +27,8 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("adnd1", ADNDActorSheet, { makeDefault: true });
+  Actors.registerSheet("adnd1", ADNDMonsterSheet, { types: ["monster"], makeDefault: true });
+  Actors.registerSheet("adnd1", ADNDCharacterSheet, { types: ["character"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("adnd1", ADNDItemSheet, { makeDefault: true });
 

@@ -1,18 +1,18 @@
 import {ADNDActorSheet} from "./actor-sheet.js"
 
-export class ADNDCharacterSheet extends ADNDActorSheet {
+export class ADNDMonsterSheet extends ADNDActorSheet {
 
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["adnd1", "sheet", "actor", "character"],
-            template: "systems/adnd1/templates/actor/character-sheet.html",
+            classes: ["adnd1", "sheet", "actor", "monster"],
+            template: "systems/adnd1/templates/actor/monster-sheet.html",
             width: 600,
             height: 600,
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
-                initial: "abilities"
+                initial: "description"
             }]
         });
     }
@@ -55,17 +55,17 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
 
         // Rollable abilities.
         html.find('.rollable').click(this._onRoll.bind(this));
-    }
+   }
 
-    /* -------------------------------------------- */
+   /* -------------------------------------------- */
 
-    /**
-     * Handle creating a new Owned Item for the actor using initial
-     * data defined in the HTML dataset
-     * @param {Event} event   The originating click event
-     * @private
-     */
-    _onItemCreate(event) {
+   /**
+    * Handle creating a new Owned Item for the actor using initial
+    * data defined in the HTML dataset
+    * @param {Event} event   The originating click event
+    * @private
+    */
+   _onItemCreate(event) {
         event.preventDefault();
         const header = event.currentTarget;
         // Get the type of item to create.
@@ -107,4 +107,5 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
             });
         }
     }
+
 }

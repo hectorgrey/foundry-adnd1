@@ -8,17 +8,24 @@
                     "min": -10,
                     "max": 10
                 },
+                "biography": "",
                 "thac0": {
                     "value": 20
                 },
                 "ac": {
                     "value": 10
-                }
+                },
+                "size": "",
+                "alignment": "neutral",
+                "psionic_ability": "",
+                "attack_modes": [""],
+                "defence_modes": [""]
             }
         },
         "character": {
             "templates": ["base"],
-            "biography": "",
+            "class": "",
+            "race": "",
             "attributes": {
                 "level": {
                     "value": 1
@@ -55,7 +62,17 @@
         "monster": {
             "hit_dice": {
                 "value": 1
-            }
+            },
+            "frequency": "",
+            "no_appearing": "",
+            "percent_in_lair": 0,
+            "treasure_type": "",
+            "no_of_attacks": 1,
+            "damage": "",
+            "special_attacks": [""],
+            "special_defences": [""],
+            "magic_resistance": "",
+            "intelligence": ""
         }
     },
     "Item": {
