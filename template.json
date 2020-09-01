@@ -17,6 +17,7 @@
                 },
                 "size": "",
                 "alignment": "neutral",
+                "weapon_proficiencies": [""],
                 "psionic_ability": "",
                 "attack_modes": [""],
                 "defence_modes": [""]
