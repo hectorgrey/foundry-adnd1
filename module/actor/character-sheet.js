@@ -73,38 +73,59 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
      */
 
     onResurrectionRoll(event) {
-        let roll = new Roll("1d100ms<@resurrection", this.actor.getRollData("resurrection"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d100cs<=@resurrection", this.actor.getRollData("resurrection"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to resurrect: ${this.actor.data.data.abilities.con.resurrection}%`
+        });
     }
 
     onSystemShockRoll(event) {
-        let roll = new Roll("1d100ms<@system_shock", this.actor.getRollData("system_shock"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d100cs<=@system_shock", this.actor.getRollData("system_shock"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to survive System Shock: ${this.actor.data.data.abilities.con.systemShock}%`
+        });
     }
 
     onSpellFailureRoll(event) {
-        let roll = new Roll("1d100ms<@spell_failure", this.actor.getRollData("spell_failure"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d100cs<=@spell_failure", this.actor.getRollData("spell_failure"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Divine spell failure chance: ${this.actor.data.data.abilities.wis.failure}%`
+        });
     }
 
     onSpellLearningRoll(event) {
-        let roll = new Roll("1d100ms<@spell_learning", this.actor.getRollData("spell_learning"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d100cs<=@spell_learning", this.actor.getRollData("spell_learning"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to learn spell: ${this.actor.data.data.abilities.int.spellChance}%`
+        });
     }
 
     onOpenDoorRoll(event) {
-        let roll = new Roll("1d6ms<@open_door", this.actor.getRollData("open_door"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d6cs<=@open_door", this.actor.getRollData("open_door"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to open door: ${this.actor.data.data.abilities.str.openDoor}`
+        });
     }
 
     onForceLockRoll(event) {
-        let roll = new Roll("1d6ms<@force_lock", this.actor.getRollData("force_lock"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d6cs<=@force_lock", this.actor.getRollData("force_lock"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to force lock: ${this.actor.data.data.abilities.str.forceLock}`
+        });
     }
 
     onBendBarsRoll(event) {
-        let roll = new Roll("1d100ms<@bend_bars", this.actor.getRollData("bend_bars"));
-        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+        let roll = new Roll("1d100cs<=@bend_bars", this.actor.getRollData("bend_bars"));
+        roll.roll().toMessage({
+            speaker: ChatMessage.getSpeaker(),
+            flavor: `Roll to bend bars or lift gates: ${this.actor.data.data.abilities.str.bendBars}%`
+        });
     }
     
     _onItemCreate(event) {
