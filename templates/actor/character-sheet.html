@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="resources grid grid-3col">
+            <div class="resources grid grid-5col">
                 {{!-- "flex-group-center" is also defined in the _grid.scss
                 file and it will add a small amount of padding, a border, and
                 will center all of its child elements content and text. --}}
@@ -84,27 +84,47 @@
                     </div>
                 </div>
                 <div class="resource flex-group-center">
-                    <label for="data.ac.value"
+                    <label for="data.ac.total"
                            class="resource-label">Armour Class</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text"
-                               name="data.ac.value"
-                               value="{{data.ac.value}}"
+                               name="data.ac.total"
+                               value="{{data.ac.total}}"
                                data-dtype="Number"/>
                     </div>
                 </div>
-                <div class="resources grid grid-3col">
-                    {{#each data.abilities as |ability key|}}
-                        <div class="ability flexrow flex-group-center">
-                            <span class="resource-label">{{key}}</span>
-                            <span>{{ability.value}}</span>
-                            {{#if ability.percent}}
-                                <span> / </span>
-                                <span>{{ability.percent}}</span>
-                            {{/if}}
-                        </div>
-                    {{/each}}
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.experience.value"
+                           class="resource-label">Experience</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text"
+                               name="data.attributes.experience.value"
+                               value="{{data.attributes.experience.value}}"
+                               data-dtype="Number"/>
+                    </div>
                 </div>
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.level.value"
+                           class="resource-label">Level</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text"
+                               name="data.attributes.level.value"
+                               value="{{data.attributes.level.value}}"
+                               data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+            <div class="resources grid grid-7col">
+                {{#each data.abilities as |ability key|}}
+                    <div class="ability flexrow flex-group-center">
+                    <span class="resource-label">{{key}}</span>
+                    <span>{{ability.value}}</span>
+                        {{#if ability.percent}}
+                            <span> / </span>
+                            <span>{{ability.percent}}</span>
+                        {{/if}}
+                    </div>
+                {{/each}}
             </div>
         </div>
     </header>
@@ -167,7 +187,7 @@
                                value="{{data.abilities.str.weight}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox open_door rollable">
                         <label for="data.abilities.str.openDoor"
                                class="resource-label">Open Door</label>
                         <input disabled
@@ -176,7 +196,7 @@
                                value="{{data.abilities.str.openDoor}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox force_lock rollable">
                         <label for="data.abilities.str.forceLock"
                                class="resource-label">Force Lock</label>
                         <input disabled
@@ -185,13 +205,13 @@
                                value="{{data.abilities.str.forceLock}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox bend_bars rollable">
                         <label for="data.abilities.str.bendBars"
                                class="resource-label">Bend Bars</label>
                         <input disabled
                                type="text"
                                name="data.abilities.str.bendBars"
-                               value="{{data.abilities.str.bendBars}}"
+                               value="{{data.abilities.str.bendBars}}%"
                                data-dtype="Number"/>
                     </div>
                 </li>

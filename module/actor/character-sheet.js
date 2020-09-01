@@ -58,6 +58,9 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
         html.find('.system_shock').click(this.onSystemShockRoll.bind(this));
         html.find('.spell_failure').click(this.onSpellFailureRoll.bind(this));
         html.find('.spell_learning').click(this.onSpellLearningRoll.bind(this));
+        html.find('.open_door').click(this.onOpenDoorRoll.bind(this));
+        html.find('.force_lock').click(this.onForceLockRoll.bind(this));
+        html.find('.bend_bars').click(this.onBendBarsRoll.bind(this));
     }
 
     /* -------------------------------------------- */
@@ -86,6 +89,21 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
 
     onSpellLearningRoll(event) {
         let roll = new Roll("1d100ms<@spell_learning", this.actor.getRollData("spell_learning"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onOpenDoorRoll(event) {
+        let roll = new Roll("1d6ms<@open_door", this.actor.getRollData("open_door"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onForceLockRoll(event) {
+        let roll = new Roll("1d6ms<@force_lock", this.actor.getRollData("force_lock"));
+        roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
+    }
+
+    onBendBarsRoll(event) {
+        let roll = new Roll("1d100ms<@bend_bars", this.actor.getRollData("bend_bars"));
         roll.roll().toMessage({speaker: ChatMessage.getSpeaker()});
     }
     

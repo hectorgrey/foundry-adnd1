@@ -247,6 +247,8 @@ export class ADNDActor extends Actor {
         data.abilities.cha.henchmen = chaTable[chaVal].henchmen;
         data.abilities.cha.loyalty = chaTable[chaVal].loyalty;
         data.abilities.cha.reaction = chaTable[chaVal].reaction;
+
+        data.ac.total = data.ac.value + data.abilities.dex.defence;
     }
 
     getRollData(rollType) {
@@ -260,6 +262,12 @@ export class ADNDActor extends Actor {
                 return {spell_failure: data.abilities.wis.failure};
             case "spell_learning":
                 return {spell_learning: data.abilities.int.spellChance};
+            case "open_door":
+                return {open_door: data.abilities.str.openDoor};
+            case "force_lock":
+                return {force_lock: data.abilities.str.forceLock};
+            case "bend_bars":
+                return {bend_bars: data.abilities.str.bendBars};
             default:
                 break;
         }
