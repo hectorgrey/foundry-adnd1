@@ -68,7 +68,9 @@
                 "hit_dice": {
                     "value": 1
                 },
-                "intelligence": ""
+                "intelligence": {
+                    "value": "average"
+                }
             },
             "frequency": "",
             "no_appearing": "",

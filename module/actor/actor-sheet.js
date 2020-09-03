@@ -24,8 +24,8 @@ export class ADNDActorSheet extends ActorSheet {
     getData() {
         const data = super.getData();
         data.dtypes = ["String", "Number", "Boolean"];
-        console.log(data.data);
         for (let attr of Object.values(data.data.attributes)) {
+            console.log(attr);
             attr.isCheckbox = attr.dtype === "Boolean";
         }
         return data;
