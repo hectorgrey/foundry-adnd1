@@ -23,6 +23,7 @@ export class ADNDMonsterSheet extends ADNDActorSheet {
     getData() {
         const data = super.getData();
         data.dtypes = ["String", "Number", "Boolean"];
+        console.log(data);
         for (let attr of Object.values(data.data.attributes)) {
             attr.isCheckbox = attr.dtype === "Boolean";
         }
