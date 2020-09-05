@@ -74,22 +74,22 @@
                     </div>
                 </div>
                 <div class="resource flex-group-center">
-                    <label for="data.thac0.value"
+                    <label for="data.attributes.thac0.value"
                            class="resource-label">THAC0</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text"
-                               name="data.thac0.value"
-                               value="{{data.thac0.value}}"
+                               name="data.attributes.thac0.value"
+                               value="{{data.attributes.thac0.value}}"
                                data-dtype="Number"/>
                     </div>
                 </div>
                 <div class="resource flex-group-center">
-                    <label for="data.ac.total"
+                    <label for="data.attributes.ac.total"
                            class="resource-label">Armour Class</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text"
-                               name="data.ac.total"
-                               value="{{data.ac.total}}"
+                               name="data.attributes.ac.total"
+                               value="{{data.attributes.ac.total}}"
                                data-dtype="Number"/>
                     </div>
                 </div>
@@ -187,7 +187,9 @@
                                value="{{data.abilities.str.weight}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox open_door rollable">
+                    <div class="flexbox rollable"
+                         data-roll="d6cs<=@abilities.str.openDoor"
+                         data-label="Open Door">
                         <label for="data.abilities.str.openDoor"
                                class="resource-label">Open Door</label>
                         <input disabled
@@ -196,7 +198,9 @@
                                value="{{data.abilities.str.openDoor}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox force_lock rollable">
+                    <div class="flexbox rollable"
+                         data-roll="d6cs<=@abilities.str.forceLock"
+                         data-label="Force Lock">
                         <label for="data.abilities.str.forceLock"
                                class="resource-label">Force Lock</label>
                         <input disabled
@@ -205,7 +209,9 @@
                                value="{{data.abilities.str.forceLock}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox bend_bars rollable">
+                    <div class="flexbox rollable"
+                         data-roll="d100cs<=@abilities.str.forceLock"
+                         data-label="Bend Bars">
                         <label for="data.abilities.str.bendBars"
                                class="resource-label">Bend Bars</label>
                         <input disabled
@@ -243,7 +249,9 @@
                                value="{{data.abilities.int.maxLevel}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox spell_learning rollable">
+                    <div class="flexbox rollable"
+                         data-roll="d100cs<=@abilities.int.spellChance"
+                         data-label="Open Door">
                         <label for="data.abilities.int.spellChance"
                                class="resource-label">Chance to Learn Spell</label>
                         <input disabled
@@ -290,7 +298,9 @@
                                value="{{data.abilities.wis.bonusSpells1}}{{#if data.abilities.wis.bonusSpells2}}; {{data.abilities.wis.bonusSpells2}}{{#if data.abilities.wis.bonusSpells3}}; {{data.abilities.wis.bonusSpells3}}{{#if data.abilities.wis.bonusSpells4}}; {{data.abilities.wis.bonusSpells4}}{{/if}}{{/if}}{{/if}}"
                                data-dtype="Number"/>
                     </div>
-                    <div class="flexbox spell_failure rollable">
+                    <div class="flexbox rollable"
+                         data-roll="d100cs<=@abilities.wis.failure"
+                         data-label="Open Door">
                         <label for="data.abilities.wis.failure"
                                class="resource-label">Spell Failure</label>
                         <input disabled
@@ -374,7 +384,9 @@
                                value="{{data.abilities.warriorhp.value}}"
                                data-dtype="boolean"/>
                     </div>
-                    <div class="flexbox system_shock rollable">
+                    <div class="flexbox system_shock rollable"
+                         data-roll="d100cs<=@abilities.con.systemShock"
+                         data-label="Open Door">
                         <label for="data.abilities.con.systemShock"
                                class="resource-label">System Shock</label>
                         <input disabled
@@ -383,7 +395,9 @@
                                value="{{data.abilities.con.systemShock}}%"
                                data-dtype="number"/>
                     </div>
-                    <div class="flexbox resurrection rollable">
+                    <div class="flexbox resurrection rollable"
+                         data-roll="d100cs<=@abilities.con.resurrection"
+                         data-label="Open Door">
                         <label for="data.abilities.con.resurrection"
                                class="resource-label">Resurrection</label>
                         <input disabled

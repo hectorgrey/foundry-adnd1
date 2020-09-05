@@ -18,7 +18,7 @@
                     }
                 },
                 "size": "",
-                "alignment": "neutral",
+                "alignment": "Neutral",
                 "weapon_proficiencies": [],
                 "psionic_ability": "",
                 "attack_modes": [],
@@ -66,10 +66,10 @@
             "templates": ["base"],
             "attributes": {
                 "hit_dice": {
-                    "value": 1
+                    "value": ""
                 },
                 "intelligence": {
-                    "value": "average"
+                    "value": "Average"
                 }
             },
             "frequency": "",
@@ -80,7 +80,7 @@
             "damage": "",
             "special_attacks": [],
             "special_defences": [],
-            "magic_resistance": ""
+            "magic_resistance": 0
         }
     },
     "Item": {

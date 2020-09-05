@@ -248,7 +248,7 @@ export class ADNDActor extends Actor {
         data.abilities.cha.loyalty = chaTable[chaVal].loyalty;
         data.abilities.cha.reaction = chaTable[chaVal].reaction;
 
-        data.ac.total = data.ac.value + data.abilities.dex.defence;
+        data.attributes.ac.total = data.attributes.ac.value + data.abilities.dex.defence;
     }
 
     getRollData(rollType) {
@@ -275,6 +275,6 @@ export class ADNDActor extends Actor {
 
     _prepareMonsterData(actorData) {
         const data = actorData.data;
+        data.attributes.hit_points.min = 0;
     }
-
 }
