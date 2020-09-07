@@ -4,6 +4,8 @@
  * @extends {Actor}
  */
 
+import '../../node_modules/foundry-pc-types/';
+
 // Ability tables as dictionaries
 const strTable = {
     3:  {toHit: -3, damage: -1, weight:  150, openDoor: 1, forceLock: 0, bendBars:  0},
@@ -131,8 +133,6 @@ export class ADNDActor extends Actor {
         super.prepareData();
 
         const actorData = this.data;
-        const data = actorData.data;
-        const flags = actorData.flags;
 
         // Make separate methods for each Actor type (character, npc,
         // etc.) to keep things organized.
@@ -158,7 +158,6 @@ export class ADNDActor extends Actor {
         // option.
 
         const strVal = data.abilities.str.value;
-        const strPC = data.abilities.str.percent;
 
         data.abilities.str.toHit = strTable[strVal].toHit;
         data.abilities.str.damage = strTable[strVal].damage;
@@ -170,6 +169,7 @@ export class ADNDActor extends Actor {
         // This set of values shouldn't be required as often, and is
         // harder to add to a lookup table.
 
+        const strPC = data.abilities.str.percent;
         if (strVal === 18 && strPC > 0) {
             if (strPC === 100) {
                 data.abilities.str.toHit += 2;
