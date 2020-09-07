@@ -6,7 +6,7 @@ export class ADNDMonsterSheet extends ADNDActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["adnd1", "sheet", "actor", "monster"],
-            template: "systems/adnd1/templates/actor/monster-sheet.html",
+            template: "systems/adnd1/templates/actor/monster-sheet.handlebars",
             width: 800,
             height: 600,
             tabs: [{

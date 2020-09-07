@@ -6,7 +6,7 @@ export class ADNDCharacterSheet extends ADNDActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["adnd1", "sheet", "actor", "character"],
-            template: "systems/adnd1/templates/actor/character-sheet.html",
+            template: "systems/adnd1/templates/actor/character-sheet.handlebars",
             width: 1100,
             height: 600,
             tabs: [{
