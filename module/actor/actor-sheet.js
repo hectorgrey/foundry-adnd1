@@ -2,6 +2,8 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
+import '../../node_modules/foundry-pc-types'
+
 export class ADNDActorSheet extends ActorSheet {
 
     /** @override */
