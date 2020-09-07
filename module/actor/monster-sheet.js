@@ -21,8 +21,7 @@ export class ADNDMonsterSheet extends ADNDActorSheet {
 
     /** @override */
     getData() {
-        const data = super.getData();
-        return data;
+        return super.getData();
     }
 
     /** @override */
