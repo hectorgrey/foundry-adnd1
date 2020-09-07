@@ -250,29 +250,7 @@ export class ADNDActor extends Actor {
 
         data.attributes.ac.total = data.attributes.ac.value + data.abilities.dex.defence;
     }
-
-    getRollData(rollType) {
-        const data = this.data.data;
-        switch (rollType) {
-            case "resurrection":
-                return {resurrection: data.abilities.con.resurrection};
-            case "system_shock":
-                return {system_shock: data.abilities.con.systemShock};
-            case "spell_failure":
-                return {spell_failure: data.abilities.wis.failure};
-            case "spell_learning":
-                return {spell_learning: data.abilities.int.spellChance};
-            case "open_door":
-                return {open_door: data.abilities.str.openDoor};
-            case "force_lock":
-                return {force_lock: data.abilities.str.forceLock};
-            case "bend_bars":
-                return {bend_bars: data.abilities.str.bendBars};
-            default:
-                break;
-        }
-    }
-
+    
     _prepareMonsterData(actorData) {
         const data = actorData.data;
         data.attributes.hit_points.min = 0;
