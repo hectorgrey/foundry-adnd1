@@ -12,7 +12,7 @@ export class ADNDMonsterSheet extends ADNDActorSheet {
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
-                initial: "description"
+                initial: "information"
             }]
         });
     }

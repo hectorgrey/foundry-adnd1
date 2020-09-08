@@ -4,7 +4,7 @@
  * @extends {Actor}
  */
 
-import '../../node_modules/foundry-pc-types/';
+//import '../../node_modules/foundry-pc-types/';
 
 // Ability tables as dictionaries
 const strTable = {
@@ -252,7 +252,5 @@ export class ADNDActor extends Actor {
     }
     
     _prepareMonsterData(actorData) {
-        const data = actorData.data;
-        data.attributes.hit_points.min = 0;
     }
 }
