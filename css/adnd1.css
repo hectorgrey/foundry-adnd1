@@ -119,7 +119,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.adnd1 .sheet-header {
+.adnd1 .character-sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 210px;
   flex: 0 0 210px;
@@ -139,7 +139,27 @@
   margin-bottom: 10px;
 }
 
-.adnd1 .sheet-header .profile-img {
+.adnd1 .monster-sheet-header {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 220px;
+  flex: 0 0 220px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.adnd1 .character-sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -147,20 +167,28 @@
   margin-right: 10px;
 }
 
-.adnd1 .sheet-header .header-fields {
+.adnd1 .monster-sheet-header .profile-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.adnd1 .character-sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.adnd1 .sheet-header h1.charname {
+.adnd1 .monster-sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.adnd1 .sheet-header h1.charname input {
+.adnd1 .monster-sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;

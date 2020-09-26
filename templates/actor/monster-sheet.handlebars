@@ -1,7 +1,7 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
   
     {{!-- Sheet Header --}}
-    <header class="sheet-header">
+    <header class="monster-sheet-header">
         <img class="profile-img"
              alt="Profile Image"
              src="{{actor.img}}"
@@ -27,7 +27,7 @@
  
                 <div class="resource flex-group-center rollable"
                      data-roll="@attributes.hit_dice.value"
-                     data-label="@actor.name Hit Dice">
+                     data-label="Hit Dice">
                     <label for="data.attributes.hit_dice.value"
                            class="resource-label">Hit Dice</label>
                     <div class="resource-content flexrow flex-center flex-between">
